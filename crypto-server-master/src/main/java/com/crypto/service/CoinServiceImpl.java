@@ -55,7 +55,7 @@ public class CoinServiceImpl implements CoinService {
 
     @Override
     public List<CoinDTO> getCoinList(int page) {
-        int pageSize = 20;
+        int pageSize = 10;
         Pageable pageable = PageRequest.of(page, pageSize);
         List<Coin> coins = coinRepository.findAll(pageable).getContent();
         return coins.stream()
