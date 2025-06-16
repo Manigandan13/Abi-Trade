@@ -93,8 +93,13 @@ const Home = () => {
               ))}
               {coinList.length >= 10 && (
                 <button
-                  onClick={() => handlePageChange(page + 1)}
-                  className="px-3 py-2 text-xs md:text-sm border border-gray-400 text-gray-700 rounded-md hover:bg-gray-100 transition"
+                  onClick={() => {
+                    if (page < 2) handlePageChange(page + 1);
+                  }}
+                  className={`px-3 py-2 text-xs md:text-sm border border-gray-400 rounded-md transition ${
+                    page < 2 ? "text-gray-700 hover:bg-gray-100" : "text-gray-400 cursor-not-allowed"
+                  }`}
+                  disabled={page >= 2}
                 >
                   Next <ChevronRightIcon className="h-4 w-4 inline ml-1" />
                 </button>
