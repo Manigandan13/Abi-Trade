@@ -4,8 +4,6 @@ import ReactApexChart from "react-apexcharts";
 import { fetchMarketChart } from "@/Redux/Coin/Action";
 
 const timeSeries = [
-  { label: "1D", value: 1 },
-  { label: "1M", value: 30 },
   { label: "1Y", value: 365 },
 ];
 
